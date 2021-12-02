@@ -1,5 +1,7 @@
 package com.ehang.springboot.mybatisplus.condition;
 
+import com.ehang.springboot.mybatisplus.generator.user.demain.UserInfo;
+import com.ehang.springboot.mybatisplus.generator.user.service.UserInfoService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +21,7 @@ public class LikeTest {
     @Test
     void like() {
         List<UserInfo> userInfos = userInfoService.lambdaQuery()
-                .like( UserInfo::getUserName, "一行Java")
+                .like(UserInfo::getUserName, "一行Java")
                 .list();
         log.info("userInfo:{}", userInfos);
         // 等价sql：SELECT id,user_name,age,source FROM user_info WHERE (user_name LIKE "%一行Java%")
@@ -28,7 +30,7 @@ public class LikeTest {
     @Test
     void notLike() {
         List<UserInfo> userInfos = userInfoService.lambdaQuery()
-                .notLike( UserInfo::getUserName, "一行Java")
+                .notLike(UserInfo::getUserName, "一行Java")
                 .list();
         log.info("userInfo:{}", userInfos);
         // 等价sql：SELECT id,user_name,age,source FROM user_info WHERE (user_name NOT LIKE "%一行Java%")
@@ -37,7 +39,7 @@ public class LikeTest {
     @Test
     void likeLeft() {
         List<UserInfo> userInfos = userInfoService.lambdaQuery()
-                .likeLeft( UserInfo::getUserName, "一行Java")
+                .likeLeft(UserInfo::getUserName, "一行Java")
                 .list();
         log.info("userInfo:{}", userInfos);
         // 等价sql：SELECT id,user_name,age,source FROM user_info WHERE (user_name LIKE "%一行Java")
@@ -46,7 +48,7 @@ public class LikeTest {
     @Test
     void likeRight() {
         List<UserInfo> userInfos = userInfoService.lambdaQuery()
-                .likeRight( UserInfo::getUserName, "一行Java")
+                .likeRight(UserInfo::getUserName, "一行Java")
                 .list();
         log.info("userInfo:{}", userInfos);
         // 等价sql：SELECT id,user_name,age,source FROM user_info WHERE (user_name LIKE "一行Java%")

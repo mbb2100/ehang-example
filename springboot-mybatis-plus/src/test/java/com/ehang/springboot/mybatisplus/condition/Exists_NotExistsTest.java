@@ -1,10 +1,10 @@
 package com.ehang.springboot.mybatisplus.condition;
 
+import com.ehang.springboot.mybatisplus.generator.user.service.UserInfoService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
 /**
  * Exists NotExists
  */

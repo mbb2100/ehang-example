@@ -1,5 +1,7 @@
 package com.ehang.springboot.mybatisplus.condition;
 
+import com.ehang.springboot.mybatisplus.generator.user.demain.UserInfo;
+import com.ehang.springboot.mybatisplus.generator.user.service.UserInfoService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +21,7 @@ public class IsNullTest {
     @Test
     void isNull() {
         List<UserInfo> userInfos = userInfoService.lambdaQuery()
-                .isNull( UserInfo::getUserName)
+                .isNull(UserInfo::getUserName)
                 .list();
         log.info("userInfo:{}", userInfos);
         // 等价sql：SELECT id,user_name,age,source FROM user_info WHERE (user_name IS NULL)
@@ -28,7 +30,7 @@ public class IsNullTest {
     @Test
     void isNotNull() {
         List<UserInfo> userInfos = userInfoService.lambdaQuery()
-                .isNotNull( UserInfo::getUserName)
+                .isNotNull(UserInfo::getUserName)
                 .list();
         log.info("userInfo:{}", userInfos);
         // 等价sql：SELECT id,user_name,age,source FROM user_info WHERE (user_name IS NOT NULL)

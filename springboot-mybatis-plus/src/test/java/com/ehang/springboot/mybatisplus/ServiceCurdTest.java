@@ -2,6 +2,8 @@ package com.ehang.springboot.mybatisplus;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
+import com.ehang.springboot.mybatisplus.generator.user.demain.UserInfo;
+import com.ehang.springboot.mybatisplus.generator.user.service.UserInfoService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

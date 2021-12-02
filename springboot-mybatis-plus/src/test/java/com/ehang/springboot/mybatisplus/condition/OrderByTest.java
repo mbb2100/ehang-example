@@ -1,6 +1,8 @@
 package com.ehang.springboot.mybatisplus.condition;
 
 import com.alibaba.fastjson.JSON;
+import com.ehang.springboot.mybatisplus.generator.user.demain.UserInfo;
+import com.ehang.springboot.mybatisplus.generator.user.service.UserInfoService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,5 +1,7 @@
 package com.ehang.springboot.mybatisplus.condition;
 
+import com.ehang.springboot.mybatisplus.generator.user.demain.UserInfo;
+import com.ehang.springboot.mybatisplus.generator.user.service.UserInfoService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +21,7 @@ public class NeTest {
     @Test
     void ne() {
         List<UserInfo> userInfos = userInfoService.lambdaQuery()
-                .ne( UserInfo::getId, 1)
+                .ne(UserInfo::getId, 1)
                 .list();
         log.info("userInfo:{}", userInfos);
         // 等价sql：SELECT id,user_name,age,source FROM user_info WHERE (id <> 1)
@@ -39,7 +41,7 @@ public class NeTest {
     @Test
     void between() {
         List<UserInfo> userInfos = userInfoService.lambdaQuery()
-                .between( UserInfo::getId, 1,5)
+                .between(UserInfo::getId, 1, 5)
                 .list();
         log.info("userInfo:{}", userInfos);
         // 等价sql：SELECT id,user_name,age,source FROM user_info WHERE (id <> 1)
@@ -48,7 +50,7 @@ public class NeTest {
     @Test
     void notBetween() {
         List<UserInfo> userInfos = userInfoService.lambdaQuery()
-                .notBetween( UserInfo::getId, 5,100)
+                .notBetween(UserInfo::getId, 5, 100)
                 .list();
         log.info("userInfo:{}", userInfos);
         // 等价sql：SELECT id,user_name,age,source FROM user_info WHERE (id <> 1)

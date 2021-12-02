@@ -4,42 +4,40 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import java.io.Serializable;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
+import java.io.Serializable;
+
 /**
- * 
  * @TableName user_info
  */
-@TableName(value ="user_info")
+@TableName(value = "user_info")
 @Data
+@AllArgsConstructor
 public class UserInfo implements Serializable {
+    @TableField(exist = false)
+    private static final long serialVersionUID = 1L;
     /**
      * 主键ID
      */
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
-
     /**
      * 用户名
      */
     @TableField(value = "user_name")
     private String userName;
-
     /**
      * 年龄
      */
     @TableField(value = "age")
     private Integer age;
-
     /**
      * 来源
      */
     @TableField(value = "source")
     private Byte source;
-
-    @TableField(exist = false)
-    private static final long serialVersionUID = 1L;
 
     @Override
     public boolean equals(Object that) {
@@ -54,9 +52,9 @@ public class UserInfo implements Serializable {
         }
         UserInfo other = (UserInfo) that;
         return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
-            && (this.getUserName() == null ? other.getUserName() == null : this.getUserName().equals(other.getUserName()))
-            && (this.getAge() == null ? other.getAge() == null : this.getAge().equals(other.getAge()))
-            && (this.getSource() == null ? other.getSource() == null : this.getSource().equals(other.getSource()));
+                && (this.getUserName() == null ? other.getUserName() == null : this.getUserName().equals(other.getUserName()))
+                && (this.getAge() == null ? other.getAge() == null : this.getAge().equals(other.getAge()))
+                && (this.getSource() == null ? other.getSource() == null : this.getSource().equals(other.getSource()));
     }
 
     @Override
